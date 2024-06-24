@@ -1,5 +1,6 @@
 import math
 import random
+from itertools import permutations
 
 def g_to_oz(grams):
     return 28.3495231 * grams
@@ -25,15 +26,9 @@ def filter_prime(nums):
                 break
     return primes
 
-def permute(string, step = 0):
-    if step == len(string):
-        print("".join(string))
-    else:
-        for i in range(step, len(string)):
-            string_copy = [c for c in string]
-            string_copy[step], string_copy[i] = string_copy[i], string_copy[step]
-            
-            permute(string_copy, step + 1)  
+def permute(string):
+    words  = [ ''.join(p) for p in permutations(string)]
+    return words
 
 def reverse(string):
     string = string.split(' ')
