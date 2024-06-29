@@ -26,4 +26,4 @@ def parallelogram_area():
     base = int(input())
     return height * base 
 
-    
+print(polygon_area())
